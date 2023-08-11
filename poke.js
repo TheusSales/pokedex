@@ -13,9 +13,14 @@ async function buscar(){
     }
 }
 
-function mostrarPokemon(jsonObj,pokeName){
+function mostrarPokemon(jsonObj){
     res.innerHTML = '';
-    res.innerHTML += `Habilidades:<br>`;
+    
+    let image = jsonObj.sprites.front_default;
+
+    res.innerHTML += `<img src="${image}" alt="pokemon-frente">`;
+
+    res.innerHTML += `<br>Habilidades:<br>`;
     
     jsonObj.abilities.forEach(habilidade => {
         var abilityName = habilidade.ability.name;
