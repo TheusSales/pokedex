@@ -15,33 +15,33 @@ async function buscar(){
 
 function mostrarPokemon(jsonObj){
     res.innerHTML = '';
-    
-    let image = jsonObj.sprites.front_default;
+    //imagem
+    let imageFront = jsonObj.sprites.front_default;
+    let imageBack = jsonObj.sprites.back_default;
 
-    res.innerHTML += `<img src="${image}" alt="pokemon-frente">`;
+    res.innerHTML += `<img src="${imageFront}" alt="pokemon-frente">`;
+    res.innerHTML += `<img src="${imageBack}" alt="pokemon-costas">`;
 
-    res.innerHTML += `<br>Habilidades:<br>`;
+    //habilidades
+    res.innerHTML += `<strong><br>Habilidades<br></strong>`;
     
     jsonObj.abilities.forEach(habilidade => {
         var abilityName = habilidade.ability.name;
         res.innerHTML += `${abilityName}<br>`;
     });
 
+    
+    //tipo do pokemon
+    res.innerHTML +=`<strong><br>Tipo:<br></strong>`
+
+    jsonObj.types.forEach(tipos => {
+        var tipo = tipos.type.name;
+        res.innerHTML += `${tipo}<br>`;
+    });
+
+    //peso
     let peso = Math.floor(jsonObj.weight/10);
+    res.innerHTML += `<strong><br>Peso</strong>`
+    res.innerHTML += `<br>${peso} Kg<br>`;
 
-    let tipo = JSON.stringify(jsonObj.types[0].type.name).replace(/"/g,"");
-
-    res.innerHTML += `<br>Peso: ${peso} Kg`
-
-    res.innerHTML += `<br>Tipo: ${tipo}`
-
-    // res.innerHTML += `<br>Outras formas:<br>`;
-    // jsonObj.forms.forEach(forma => {
-    //     var formName = forma.name;
-    //     if(formName != pokeName){
-    //         res.innerHTML = `${formName}<br>`
-    //     } else {
-    //         res.innerHTML += `Não há outras formas`;
-    //     }
-    // });
 }

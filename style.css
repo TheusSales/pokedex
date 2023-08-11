@@ -1,0 +1,28 @@
+body{
+    font-family: 'Varela Round', sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+section{
+    text-align: center;
+    padding-bottom: 30px;
+}
+.container {
+    text-align: center;
+}
+
+#res {
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 20%;
+    padding: 10px;
+    margin: 0 auto; /* Centralizar horizontalmente */
+    max-width: 80%; /* Limitar a largura máxima */
+  }
+
+img{
+    width: 150px;
+    height: 150px;
+}
