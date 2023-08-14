@@ -1,9 +1,11 @@
 body{
     font-family: 'Varela Round', sans-serif;
+    background-color: #232323;
 }
 
 h1{
     text-align: center;
+    color: #dc0a2d;
 }
 section{
     text-align: center;
@@ -14,6 +16,7 @@ section{
 }
 
 #res {
+    background-color: #28acff;
     display: inline-block;
     border: 2px solid black;
     border-radius: 20%;
@@ -25,4 +28,10 @@ section{
 img{
     width: 150px;
     height: 150px;
+}
+
+footer{
+    padding-top: 18%;
+    text-align: center;
+    color: #dedede;
 }

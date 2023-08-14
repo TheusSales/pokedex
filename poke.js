@@ -1,4 +1,5 @@
-var res = document.getElementById('res');
+
+var container = document.getElementById('container');
 
 async function buscar(){
     try {
@@ -9,12 +10,21 @@ async function buscar(){
         mostrarPokemon(data,pokeName);
         //const prettyData = JSON.stringify(data, null, 2);
     } catch (error) {
-        res.innerHTML = `Ocorreu um erro: ${error}`;
+        window.alert(`Ocorreu um erro: ${error}`);
     }
 }
 
 function mostrarPokemon(jsonObj){
+    var res = document.getElementById("res");
+
+    if (!res) {
+        res = document.createElement('div');
+        res.id = 'res';
+        container.appendChild(res);
+    }
+
     res.innerHTML = '';
+
     //imagem
     let imageFront = jsonObj.sprites.front_default;
     let imageBack = jsonObj.sprites.back_default;
